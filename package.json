@@ -3,7 +3,7 @@
   "name": "format-code",
   "title": "Format Code",
   "description": "Format code on the clipboard",
-  "icon": "command-icon.png",
+  "icon": "icon.png",
   "author": "ikaraszi",
   "owner": "function-artisans",
   "categories": [
