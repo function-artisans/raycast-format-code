@@ -5,7 +5,6 @@
   "description": "Format code on the clipboard",
   "icon": "icon.png",
   "author": "ikaraszi",
-  "owner": "function-artisans",
   "categories": [
     "Developer Tools"
   ],
