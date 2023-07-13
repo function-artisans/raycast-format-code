@@ -1,3 +1,3 @@
 # format-code
 
-Format code on the clipboard
+Format Code
