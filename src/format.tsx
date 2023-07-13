@@ -3,51 +3,44 @@ import { usePromise } from "@raycast/utils";
 import { useRef } from "react";
 
 import { pipeline } from "./pipeline";
-import { Language } from "./types";
+import { Language, Parser } from "./types";
 
-const languages: readonly Language[] = [
-  "angular",
-  "babel-flow",
-  "babel-ts",
-  "babel",
-  "css",
-  "espree",
-  "flow",
-  "glimmer",
-  "graphql",
-  "html",
-  "json-stringify",
-  "json",
-  "json5",
-  "less",
-  "lwc",
-  "markdown",
-  "mdx",
-  "meriyah",
-  "scss",
-  "typescript",
-  "vue",
-  "yaml",
-] as const;
-
-type SupportedLanguage = (typeof languages)[number];
+const supportedLanguages: Record<Language, Parser> = {
+  angular: "angular",
+  css: "css",
+  glimmer: "glimmer",
+  graphql: "graphql",
+  html: "html",
+  javascript: "babel",
+  json: "json",
+  json5: "json5",
+  less: "less",
+  lwc: "lwc",
+  markdown: "markdown",
+  mdx: "mdx",
+  scss: "scss",
+  typescript: "typescript",
+  vue: "vue",
+  yaml: "yaml",
+};
 
 type CommandProps = {
   language: Language;
+  parser: Parser;
 };
 
-function Format({ language }: CommandProps) {
+function Format({ language, parser }: CommandProps) {
   const abortable = useRef<AbortController>();
 
-  const { isLoading, data: markdown } = usePromise(pipeline, [language], { abortable });
+  const { isLoading, data: markdown } = usePromise(pipeline, [language, parser], { abortable });
 
   return <Detail isLoading={isLoading} markdown={markdown} />;
 }
 
-const formatters = Object.fromEntries(
-  languages.map((language) => {
-    return [language, () => <Format language={language} />];
-  })
-) as Record<SupportedLanguage, JSX.Element>;
+const formatterEntries = Object.entries(supportedLanguages).map(([language, parser]) => {
+  return [language, () => <Format language={language as Language} parser={parser} />];
+});
+
+const formatters = Object.fromEntries(formatterEntries) as Record<Language, JSX.Element>;
 
 export default formatters;

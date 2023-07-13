@@ -12,6 +12,24 @@
   "license": "MIT",
   "commands": [
     {
+      "name": "format-angular",
+      "title": "Format Angular",
+      "description": "Formats Angular on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-css",
+      "title": "Format CSS",
+      "description": "Formats CSS on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-glimmer",
+      "title": "Format Glimmer",
+      "description": "Formats Glimmer on the clipboard",
+      "mode": "view"
+    },
+    {
       "name": "format-graphql",
       "title": "Format GraphQL",
       "description": "Formats GraphQL on the clipboard",
@@ -24,15 +42,63 @@
       "mode": "view"
     },
     {
+      "name": "format-javascript",
+      "title": "Format JavaScript",
+      "description": "Formats JavaScript on the clipboard",
+      "mode": "view"
+    },
+    {
       "name": "format-json",
       "title": "Format JSON",
       "description": "Formats JSON on the clipboard",
       "mode": "view"
     },
     {
+      "name": "format-json5",
+      "title": "Format JSON5",
+      "description": "Formats JSON5 on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-less",
+      "title": "Format Less",
+      "description": "Formats Less on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-lwc",
+      "title": "Format LWC",
+      "description": "Formats LWC on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-markdown",
+      "title": "Format Markdown",
+      "description": "Formats Markdown on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-mdx",
+      "title": "Format MDX",
+      "description": "Formats MDX on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-scss",
+      "title": "Format SCSS",
+      "description": "Formats SCSS on the clipboard",
+      "mode": "view"
+    },
+    {
       "name": "format-typescript",
       "title": "Format TypeScript",
       "description": "Formats TypeScript on the clipboard",
+      "mode": "view"
+    },
+    {
+      "name": "format-vue",
+      "title": "Format VUE",
+      "description": "Formats VUE on the clipboard",
       "mode": "view"
     },
     {
