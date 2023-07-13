@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 
+/assets/icon.pxm
+
 # Raycast specific files
 raycast-env.d.ts
 
