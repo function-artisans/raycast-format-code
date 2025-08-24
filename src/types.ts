@@ -1,6 +1,4 @@
-import { BuiltInParserName } from "prettier";
-
-export type Parser = BuiltInParserName;
+export type Formatter = (query: string) => Promise<string>;
 
 export type Language =
   | "angular"
@@ -16,10 +14,7 @@ export type Language =
   | "markdown"
   | "mdx"
   | "scss"
+  | "sql"
   | "typescript"
   | "vue"
   | "yaml";
-
-export type Preferences = {
-  printWidth: string;
-};
