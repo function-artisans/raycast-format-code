@@ -5,9 +5,7 @@
   "description": "Format code on the clipboard",
   "icon": "icon.png",
   "author": "ikaraszi",
-  "categories": [
-    "Developer Tools"
-  ],
+  "categories": ["Developer Tools"],
   "license": "MIT",
   "commands": [
     {
@@ -105,6 +103,12 @@
       "title": "Format YAML",
       "description": "Formats YAML on the clipboard",
       "mode": "view"
+    },
+    {
+      "name": "format-sql",
+      "title": "Format SQL",
+      "description": "Formats SQL on the clipboard",
+      "mode": "view"
     }
   ],
   "preferences": [
@@ -115,12 +119,41 @@
       "description": "Specify the line length that the printer will wrap on.",
       "placeholder": "100",
       "required": false
+    },
+    {
+      "name": "sqlDialect",
+      "title": "SQL dialect",
+      "type": "dropdown",
+      "description": "Set the SQL dialect",
+      "data": [
+        { "value": "sql", "title": "Standard SQL" },
+        { "value": "bigquery", "title": "GCP BigQuery" },
+        { "value": "db2", "title": "IBM DB2" },
+        { "value": "db2i", "title": "IBM DB2i (experimental)" },
+        { "value": "duckdb", "title": "DuckDB" },
+        { "value": "hive", "title": "Apache Hive" },
+        { "value": "mariadb", "title": "MariaDB" },
+        { "value": "mysql", "title": "MySQL" },
+        { "value": "tidb", "title": "TiDB" },
+        { "value": "n1ql", "title": "Couchbase N1QL" },
+        { "value": "plsql", "title": "Oracle PL/SQL" },
+        { "value": "postgresql", "title": "PostgreSQL" },
+        { "value": "redshift", "title": "Amazon Redshift" },
+        { "value": "singlestoredb", "title": "SingleStoreDB" },
+        { "value": "snowflake", "title": "Snowflake" },
+        { "value": "spark", "title": "Spark" },
+        { "value": "sqlite", "title": "SQLite" },
+        { "value": "transactsql", "title": "SQL Server Transact-SQL" },
+        { "value": "trino", "title": "Trino / Presto" }
+      ],
+      "required": false
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.55.2",
     "@raycast/utils": "^1.8.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "sql-formatter": "^15.6.2"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
@@ -134,6 +167,7 @@
     "build": "ray build -e dist",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
+    "eslint": "eslint src",
     "lint": "ray lint",
     "publish": "npx @raycast/api@latest publish"
   }

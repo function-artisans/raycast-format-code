@@ -1,3 +1,3 @@
-import format from "./format";
+import prettier from "./prettier";
 
-export default format.mdx;
+export default prettier.mdx;
